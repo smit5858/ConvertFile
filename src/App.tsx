@@ -1,6 +1,7 @@
 import { Navbar } from './components/layout/Navbar'
 import { Footer } from './components/layout/Footer'
 import { AppRoutes } from './routes'
+import { ErrorBoundary } from './components/ErrorBoundary'
 
 function App() {
   return (
@@ -9,7 +10,9 @@ function App() {
       
       {/* Page Content Container */}
       <main className="flex-grow">
-        <AppRoutes />
+        <ErrorBoundary>
+          <AppRoutes />
+        </ErrorBoundary>
       </main>
       
       <Footer />
